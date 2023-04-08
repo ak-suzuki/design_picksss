@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Book
 
+print('hello!!!!!')
+
 # Register your models here.
 class BookAdmin(admin.ModelAdmin):
     pass

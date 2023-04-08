@@ -39,7 +39,7 @@ services:
     ports:
       - "8000:8000"
     # シェルスクリプトを実行
-    command: sh -c "chmod 755 /code/entrypoint.sh && /code/entrypoint.sh"
+    command: python /code/manage.py runserver 0.0.0.0:8000 --insecure
     # コンテナ内の環境変数を.envを使って設定
     env_file:
       - .env
