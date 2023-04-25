@@ -21,13 +21,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'front/css/common/style.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="https://fooodesign.com/wp-content/uploads/2022/02/icon-1.ico">
+    {% comment %} <link rel="shortcut icon" href="https://fooodesign.com/wp-content/uploads/2022/02/icon-1.ico"> {% endcomment %}
     {% block extra_css %}{% endblock %}
   </head>
   <body>
     <div id="container">
       {% include 'front/partials/header.html' %}
-      {% include 'front/partials/sidebar.html' %}
+      {% include 'front/partials/sidemenu.html' %}
       {% block content %}{% endblock %}
       {% include 'front/partials/footer.html' %}
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -40,6 +40,50 @@
         gtag('config', 'UA-144208891-3');
       </script>
       <script data-ad-client="ca-pub-4136480528170367" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+        $(function() {
+          $(".menu-link").click(function(e) {
+            e.preventDefault();
+            $(".menu").toggleClass("open");
+            $(".sidemenu-outer").toggleClass("open");
+          });
+          $(".sidemenu-bg").click(function(e) {
+            e.preventDefault();
+            $(".menu").toggleClass("open");
+            $(".sidemenu-outer").removeClass('open');
+          });
+
+          // TOTOP
+          $("#to-top").hide();
+            $(window).on("scroll", function() {
+                if ($(this).scrollTop() > 100) {
+                    $("#to-top").fadeIn("fast");
+                } else {
+                    $("#to-top").fadeOut("fast");
+                }
+                scrollHeight = $(document).height(); //ドキュメントの高さ 
+                scrollPosition = $(window).height() + $(window).scrollTop(); //現在地 
+                footHeight = $("footer").innerHeight(); //footerの高さ（＝止めたい位置）
+                if ( scrollHeight - scrollPosition  <= footHeight ) { //ドキュメントの高さと現在地の差がfooterの高さ以下になったら
+                    $("#to-top").css({
+                        "position":"absolute", //pisitionをabsolute（親：wrapperからの絶対値）に変更
+                        "bottom": footHeight + 20 //下からfooterの高さ + 20px上げた位置に配置
+                    });
+                } else { //それ以外の場合は
+                    $("#to-top").css({
+                        "position":"fixed", //固定表示
+                        "bottom": "20px" //下から20px上げた位置に
+                    });
+                }
+            });
+            $('#to-top').click(function () {
+                $('body,html').animate({
+                scrollTop: 0
+                }, 400);
+                return false;
+            });
+        });
+      </script>
       {% block extra_js %}{% endblock %}
     </div>
   </body>
