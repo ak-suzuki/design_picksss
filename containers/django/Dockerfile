@@ -1,5 +1,5 @@
 # Pythonのイメージ指定
-FROM python:3.11.2
+FROM python:3.11
 # PYTHONDONTWRITEBYTECODEとPYTHONUNBUFFEREDはオプション
 # pycファイル(および__pycache__)の生成を行わないようにする
 ENV PYTHONDONTWRITEBYTECODE=1

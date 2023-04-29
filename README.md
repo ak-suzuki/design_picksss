@@ -1,4 +1,4 @@
-# fooodesignとは
+# DesignPicksssとは
 Webサイトデザインの参考サイト集です。
 以前WordPressを使用してWebサイトデザイン参考サイト集（ https://fooodesign.com/ ）を作成したが、これをPython化したいのです。
 
@@ -22,20 +22,19 @@ Webサイトデザインの参考サイト集です。
     ```
     $ docker-compose -f docker-compose.yml up
     ```
-3. runserverされるのでURLアクセスして表示されるか確認
 
-    - http://127.0.0.1:8000/admin/login/?next=/admin/
-
-4. 初回のmigrate
+3. 初回のmigrate
    - アプリケーションの中に入って
         ```
-        $ docker exec -it app /bin/bash
+        $ docker exec -it django_app /bin/bash
         ```
     - migrate
         ```
         # python manage.py migrate
         ```
-5. createsperuser 管理者ユーザ作成
+
+
+4. createsperuser 管理者ユーザ作成
   - アプリケーションの中に入ってる状態で
     ```
     $ python manage.py createsuperuser
@@ -46,10 +45,10 @@ Webサイトデザインの参考サイト集です。
     Superuser created successfully.
     ```
 
-6. Django admin画面から、5.の `Username` と `Password` でログインできればOK🎉
+5. Django admin画面から、5.の `Username` と `Password` でログインできればOK🎉
     - http://127.0.0.1:8000/admin/login/?next=/admin/
 
-7. さぁ開発！！！
+6. さぁ開発！！！
 
 # マークダウンの書き方メモ
 
