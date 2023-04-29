@@ -1,9 +1,9 @@
 # DesignPicksssとは
 Webサイトデザインの参考サイト集です。
-以前WordPressを使用してWebサイトデザイン参考サイト集（ https://fooodesign.com/ ）を作成したが、これをPython化したいのです。
+以前WordPressを使用してWebサイトデザイン参考サイト集（ https://fooodesign.com/ ）を作成したが、これをPython化する。
 
 ## 目的
-- 機能を追加したい🍔
+- 管理画面を作って機能を追加する🍔
     - サムネイル画像を今まで、Photoshopで手動でサイズ変更していたがそれをPythonにやってもらいたい
 - AWSのお勉強🍕
 
