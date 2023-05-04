@@ -72,3 +72,11 @@ B --> C(continue)
 D(conotinue)
 D --> E[続き]
 E --> F(end)
+
+## VSCode memo
+
+- ファイル全体のインデント揃える
+  - shift + option + F
+
+- 関数ジャンプ戻る
+    - Ctrl + -

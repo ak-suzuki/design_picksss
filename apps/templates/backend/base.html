@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+{% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- title -->
+        <title>{% block title %}{% endblock %}</title>
+        <!-- bootstrap -->
+        <link rel="stylesheet" type="text/css" href="{% static 'plug_in/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/backend/style.css' %}">
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+        {% block extra_css %}{% endblock %}
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        <script src="{% static 'plug_in/js/jquery-3.6.4.min.js' %}"></script>
+        <script src="{% static 'plug_in/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'plug_in/js/popper.min.js' %}"></script>
+        <script src="{% static 'js/backend/common.js' %}"></script>
+        {% block extra_js %}{% endblock %}
+    </body>
+</html>

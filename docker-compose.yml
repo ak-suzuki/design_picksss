@@ -18,6 +18,8 @@ services:
     # ローカルの/data/dbをコンテナの/var/lib/postgresql/dataにマウントする
     volumes:
       - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
     # コンテナ内の環境変数を.envを使って設定
     env_file:
       - .env

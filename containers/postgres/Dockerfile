@@ -1,2 +1,2 @@
 # PostgreSQLのイメージを指定
-FROM postgres:alpine
+FROM postgres:12

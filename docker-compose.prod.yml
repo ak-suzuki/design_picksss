@@ -14,7 +14,7 @@ services:
     env_file:
       - .env.prod
   django_app:
-    container_name: apdjango_appp
+    container_name: django_app
     build:
       context: .
       dockerfile: containers/django/Dockerfile

@@ -1,0 +1,11 @@
+body{
+  background-color: #f8f9fa;
+}
+
+.login_wrapper {
+  max-width: 460px;
+  margin-top: 20vh;
+}
+.login_bg {
+  background-color: #fff;
+}

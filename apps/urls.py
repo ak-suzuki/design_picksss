@@ -4,6 +4,10 @@ from django.urls import path
 
 
 urlpatterns = [
+    # Django admin
     path('admin/', admin.site.urls),
-    path('', include('apps.front.urls')),
+    # frontend（一般ユーザ向け画面）
+    path('', include('apps.frontend.urls')),
+    # backend（管理者向け画面）
+    path('administrator/', include('apps.backend.urls')),
 ]
