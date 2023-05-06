@@ -1,0 +1,73 @@
+{% extends "backend/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %}参考サイト追加画面{% endblock %}
+
+{% block content %}
+<div class="page-wrapper chiller-theme toggled">
+  {% include 'backend/partials/sidebar.html' %}
+  <div class="page-content">
+    <div class="container-fluid">
+
+      <!-- パンクズリスト -->
+      <nav>
+          <ol class="breadcrumb">
+              <li><a href="#">ホーム</a></li>
+              <li><a href="{% url 'reference_site:item_list' %}">参考サイト一覧</a></li>
+              <li>参考サイト追加</li>
+          </ol>
+      </nav>
+
+      <!-- ページタイトル -->
+      <p class="page-title mt-3">参考サイト追加</p>
+
+      <a href="{% url 'reference_site:item_list' %}">
+        <button class="btn btn-blue btn">一覧へ戻る</button>
+      </a>
+
+      <div class="w-50 mx-auto">
+        <form action="" method="post">
+          {% csrf_token %}
+          <div class="form-content py-4 px-5 bg-light">
+            <div class="form-group mb-3">
+              <label>スタッフコード</label>
+              <input class="form-control" type="text" placeholder="スタッフコード">
+              <div class="form-row form-inline">
+                <div class="col-9">
+                  {{ form.code.errors }}
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label>スタッフ名</label>
+              <input class="form-control" type="text" placeholder="スタッフ名">
+              <div class="form-row form-inline">
+                <div class="col-9">
+                  {{ form.name.errors }}
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label>サムネイル画像（サイズは  H:〇〇 W:〇〇 でアップロードしてください）</label>
+              <input class="form-control" type="file">
+              <div class="form-row form-inline">
+                <div class="col-9">
+                  {{ form.name.errors }}
+                </div>
+              </div>
+            </div>
+          </div><!-- form-content" -->
+
+          <div class="text-end">
+              <button type="submit" name="btn_add" class="btn btn-green btn my-3">登録</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div><!-- page-content" -->
+</div><!-- page-wrapper -->
+
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

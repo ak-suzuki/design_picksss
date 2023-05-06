@@ -13,7 +13,7 @@
     <div class="sidebar-header">
       <a href="#">
         <div class="user-info">
-          <span>アカウント管理　<i class="fa fa-user-cog" style="color: #f7f7f7;"></i></span>
+          <span><i class="fa fa-user-cog" style="color: #f7f7f7;"></i> アカウント</span>
           <span><strong>Akiko Suzuki</strong></span>
         </div>
       </a>
@@ -26,17 +26,17 @@
         </li>
         <li>
           <a href="#">
-            <i class="fa fa-carrot"></i><span>商品管理</span>
+            <i class="fa fa-link"></i><span>参考サイト</span>
           </a>
         </li>
         <li>
           <a href="#">
-            <i class="fa fa-tags"></i><span>商品カテゴリー管理</span>
+            <i class="fa fa-tags"></i><span>カテゴリ</span>
           </a>
         </li>
         <li>
           <a href="#">
-            <i class="fa fa-user-circle"></i><span>スタッフ管理</span>
+            <i class="fa fa-user-circle"></i><span>管理者ユーザ</span>
           </a>
         </li>
         <li>
@@ -48,7 +48,7 @@
     </div><!-- sidebar-menu  -->
   </div><!-- sidebar-content  -->
   <div class="sidebar-footer">
-    <a href="#">
+    <a href="{% url 'sign_out' %}">
       <span class="mr-3">ログアウト</span><i class="fas fa-sign-out-alt"></i>
     </a>
   </div>
