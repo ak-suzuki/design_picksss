@@ -16,6 +16,10 @@ max-width: 100%;
 vertical-align: bottom;
 }
 
+.txt-yellow {
+  color: #FFB800;
+}
+
 /*header
 -------------------------*/
 header {
@@ -68,7 +72,7 @@ margin: 10px;
 }
 .contents .ct-list a {
 width: 264px;
-border: 2px solid #005743;
+border: 2px solid #333;
 color: #fff;
 display: inline-block;
 cursor: pointer;
@@ -171,7 +175,7 @@ top: 0;
 width: 340px; /* スマホに収まるくらい */
 height: 100vh;
 padding: 80px 24px 24px;
-background-color: #005743;
+background-color: #fff;
 transition: all .6s;
 z-index: 200;
 overflow-y: auto; /* メニューが多くなったらスクロールできるように */
@@ -206,7 +210,7 @@ padding-bottom: 10px;
 }
 
 .sidemenu p, .category-bar li a {
-color: #fafafa;
+color: #222;
 }
 .sidemenu p a:hover {
 color: #e1cfbb;
@@ -218,7 +222,7 @@ padding: 4px 20px 0 0;
 /* letter-spacing: 0.03em; */
 }
 .category-bar {
-border-bottom: 1px solid #fafafa;
+border-bottom: 1px solid #222;
 padding: 20px 0;
 }
 .category-bar li a {

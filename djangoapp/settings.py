@@ -20,8 +20,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'apps',
-    'apps.backend.reference_site',
+    'djangoapp',
+    'djangoapp.administrator.reference_site',
 ]
 
 MIDDLEWARE = [
@@ -34,13 +34,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'apps.urls'
+ROOT_URLCONF = 'djangoapp.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'apps/templates')
+            os.path.join(BASE_DIR, 'djangoapp/templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -54,7 +54,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'apps.wsgi.application'
+WSGI_APPLICATION = 'djangoapp.wsgi.application'
 
 
 # DATABASES = {

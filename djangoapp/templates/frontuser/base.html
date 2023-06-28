@@ -18,7 +18,7 @@
     <meta name="twitter:site" content="">
     <meta property="og:locale" content="ja_JP">
     <!-- //ogp -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/frontend/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/frontuser/style.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     {% comment %} <link rel="shortcut icon" href="https://fooodesign.com/wp-content/uploads/2022/02/icon-1.ico"> {% endcomment %}
@@ -26,10 +26,10 @@
   </head>
   <body>
     <div id="container">
-      {% include 'frontend/partials/header.html' %}
-      {% include 'frontend/partials/sidemenu.html' %}
+      {% include 'frontuser/partials/header.html' %}
+      {% include 'frontuser/partials/sidemenu.html' %}
       {% block content %}{% endblock %}
-      {% include 'frontend/partials/footer.html' %}
+      {% include 'frontuser/partials/footer.html' %}
     </div>
     <script src="{% static 'plug_in/js/jquery-3.6.4.min.js' %}"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->

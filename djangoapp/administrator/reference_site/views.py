@@ -6,7 +6,7 @@ def item_list(request):
     context = {}
     return render(
         request,
-        'backend/reference_site/item_list.html',
+        'administrator/reference_site/item_list.html',
         context
         )
 
@@ -16,6 +16,6 @@ def item_add(request):
     context = {}
     return render(
         request,
-        'backend/reference_site/item_add.html',
+        'administrator/reference_site/item_add.html',
         context
         )
