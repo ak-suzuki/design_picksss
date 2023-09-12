@@ -115,7 +115,8 @@ USE_TZ = True
 STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [ BASE_DIR / "static" ]
+# 本番用は下記必要ない FIXME なんでか確認する 
+# STATICFILES_DIRS = [ BASE_DIR / "static" ]
 
 
 # Default primary key field type
