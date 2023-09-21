@@ -31,17 +31,18 @@ services:
       # ビルドコンテキストはカレントディレクトリ
       context: .
       dockerfile: containers/django/Dockerfile
+    working_dir: /var/www/djangoapp
     # ボリュームを指定
-    # ローカルのカレントディレクトリをコンテナの/codeにマウントする
+    # ローカルのカレントディレクトリをコンテナの/var/www/にマウントする
     # ローカルの/staticをコンテナの/staticにマウントする
     volumes:
-      - .:/code
+      - .:/var/www/
       - ./static:/static
     # ローカルの8000番ポートとコンテナの8000番ポートをつなぐ
     ports:
       - "8000:8000"
     # シェルスクリプトを実行
-    command: python /code/manage.py runserver 0.0.0.0:8000 --insecure
+    command: python /var/www/djangoapp/manage.py runserver 0.0.0.0:8000 --insecure
     # コンテナ内の環境変数を.envを使って設定
     env_file:
       - .env

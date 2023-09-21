@@ -1,11 +1,12 @@
 import os
 from pathlib import Path
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
-DEBUG = os.environ.get('DEBUG') == 'True'
+DEBUG = os.environ.get('DJANGO_DEBUG')
 
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split(' ')
 
@@ -20,8 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'djangoapp',
-    'djangoapp.administrator.reference_site',
+    "administrator",
 ]
 
 MIDDLEWARE = [
@@ -34,13 +34,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'djangoapp.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'djangoapp/templates')
+            os.path.join(BASE_DIR, 'templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -54,15 +54,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'djangoapp.wsgi.application'
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+WSGI_APPLICATION = 'config.wsgi.application'
 
 # PostgreSQLのパラメータを.envから取得
 DATABASES = {
@@ -115,7 +107,7 @@ USE_TZ = True
 STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [ BASE_DIR / "static" ]
+# STATICFILES_DIRS = [ BASE_DIR / "static" ]
 
 
 # Default primary key field type

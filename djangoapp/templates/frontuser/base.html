@@ -62,8 +62,8 @@
               } else {
                   $("#to-top").fadeOut("fast");
               }
-              scrollHeight = $(document).height(); //ドキュメントの高さ 
-              scrollPosition = $(window).height() + $(window).scrollTop(); //現在地 
+              scrollHeight = $(document).height(); //ドキュメントの高さ
+              scrollPosition = $(window).height() + $(window).scrollTop(); //現在地
               footHeight = $("footer").innerHeight(); //footerの高さ（＝止めたい位置）
               if ( scrollHeight - scrollPosition  <= footHeight ) { //ドキュメントの高さと現在地の差がfooterの高さ以下になったら
                   $("#to-top").css({

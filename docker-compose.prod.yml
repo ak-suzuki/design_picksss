@@ -4,36 +4,36 @@ version: "3.9"
 # db(Postgres),django_app(Django)のコンテナを作成
 services:
   db:
-    container_name: postgres
+    container_name: dp_postgres
     build:
       context: .
       dockerfile: containers/postgres/Dockerfile
     volumes:
       - db_data:/var/lib/postgresql/data
-    # コンテナ内の環境変数を.env.prodを使って設定
     env_file:
-      - .env.prod
+      - .env
   django_app:
-    container_name: django_app
+    container_name: dp_django_app
     build:
       context: .
       dockerfile: containers/django/Dockerfile
+    working_dir: /var/www/djangoapp
     volumes:
-      - .:/code
+      - .:/var/www/
       - ./static:/static
     # 8000番ポートをNginx側が接続できるよう開く
     expose:
       - "8000"
     # シェルスクリプトを実行
-    command: sh -c "chmod 755 /code/entrypoint.sh && /code/entrypoint.sh && gunicorn djangoapp.wsgi:application --bind 0.0.0.0:8000"
-    # コンテナ内の環境変数を.env.prodを使って設定
+    command: sh -c "chmod 755 /var/www/entrypoint.sh && /var/www/entrypoint.sh && gunicorn config.wsgi:application --bind 0.0.0.0:8000"
+    # コンテナ内の環境変数を.envを使って設定
     env_file:
-      - .env.prod
+      - .env
     depends_on:
       - db
   web:
     # コンテナ名をwebに指定
-    container_name: web
+    container_name: dp_web
     # NginxのDockerfileをビルドする
     build:
       # ビルドコンテキストはカレントディレクトリ
